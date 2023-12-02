@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/user/OneDrive/Documents/My-Projects/Github%20Repositories/ML-Ops-Projects/MLFlow_Demo/mlruns/0/bf7a4b1c73664793845401c9c7f8ad78/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bf7a4b1c73664793845401c9c7f8ad78
+run_name: polite-rook-682
+run_uuid: bf7a4b1c73664793845401c9c7f8ad78
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1699219071045
+status: 1
+tags: []
+user_id: user
