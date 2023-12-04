@@ -7,14 +7,12 @@ from github import Github
 from datetime import timedelta
 from nbconvert.preprocessors import ExecutePreprocessor
 from github import InputFileContent
-
-
-ACCESS_TOKEN = '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'
+from dagster import ResourceParam
 
 
 @asset
-def github_stargazers():
-    return list(Github(ACCESS_TOKEN).get_repo("Melodie97/100daysofcode-Python").get_stargazers_with_dates())
+def github_stargazers(github_api: ResourceParam[Github]):
+    return list(github_api.get_repo("Melodie97/100daysofcode-Python").get_stargazers_with_dates())
 
 
 @asset
@@ -53,9 +51,9 @@ github_stargazers_by_week.head(52).reset_index().plot.bar(x="week", y="users")
 
 
 @asset
-def github_stars_notebook_gist(context, github_stars_notebook):
+def github_stars_notebook_gist(context, github_api: ResourceParam[Github], github_stars_notebook):
     gist = (
-        Github(ACCESS_TOKEN)
+        github_api
         .get_user()
         .create_gist(
             public=False,

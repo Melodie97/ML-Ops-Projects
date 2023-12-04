@@ -2,10 +2,9 @@ from dagster import (
     load_assets_from_modules,
     Definitions,
     define_asset_job,
-    ScheduleDefinition,
-    with_resources
+    ScheduleDefinition
 )
-from . import assets
+from Dagster_Demo_project import assets
 import os
 from github import Github
 
